@@ -110,7 +110,7 @@ For example:
                             (gensym (symbol-name name))))
          (args (mapcar #'first args-and-types)))
     `(progn
-       (cffi:defcallback ,callback-name ,return-type ,args-and-types
+       (cffi:defcallback* ,callback-name ,return-type ,args-and-types
          ;; Ensure we can do a recursive call.
          (flet ((,name ,args
                   #-sbcl
